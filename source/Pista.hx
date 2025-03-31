@@ -11,22 +11,22 @@ class Pista extends FlxSprite{
 	var canMove:Bool = false;
 	public static var ismovible:Bool = false;
 
-	public function new(x:Float = 0, y:Float = 800) {
+	public function new(x:Float = 0, y:Float = 550) {
 		super(x, y);
 		loadGraphic(AssetPaths.pista__png);
 
 		drag.x = 800;
 		playState = new PlayState();
 	}
-	
+
+// TODO: Change the position in which Pista stops
 	function sendMovePlayer() {
-		// TODO: change the variable canMovePlayer to false when it gets to an specific x
 		if (x < -18043) canMove = false;
 		trace(x);
 		trace(canMove);
 	}
 
-	function updateMovement() {		
+	function updateMovement() {
 		if (canMove)
 		{
 			trace("Condition: ", canMove);
