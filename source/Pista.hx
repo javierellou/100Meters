@@ -19,9 +19,8 @@ class Pista extends FlxSprite{
 		playState = new PlayState();
 	}
 
-// TODO: Change the position in which Pista stops
 	function sendMovePlayer() {
-		if (x < -18043) canMove = false;
+		if (x < -18909) canMove = false;
 		trace(x);
 		trace(canMove);
 	}
