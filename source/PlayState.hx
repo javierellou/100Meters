@@ -13,9 +13,9 @@ class PlayState extends FlxState
 	{
 		super.create();
     
-    // TODO: make the background smaller
 		background = new Background();
-		pista = new Pista();
+    
+    pista = new Pista();
 		player = new Player(10,460);
 		pista = new Pista();
 
