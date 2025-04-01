@@ -18,15 +18,17 @@ class Player extends FlxSprite
 	}
 
 	function updateMovement() {
-	  if (x < 640) {velocity.x = SPEED;}
-		else if (x >= 640 || !(canMovePlayer)) {velocity.x = 0;}
+	  if (canMovePlayer) {
+      velocity.x = SPEED;
+    }
+		else if (!(canMovePlayer)) {velocity.x = 0;}
 
 		if (SPEED < 0) {SPEED -= 20;}
 	}
 
 	function increaseVelocity() {
 		var isClicked:Bool = false;
-		isClicked = FlxG.mouse.justPressed;	
+		isClicked = FlxG.mouse.justPressed;
 
 		if (isClicked)
 		{
@@ -35,7 +37,10 @@ class Player extends FlxSprite
 	}
  
 	public function sendCanMove(pos:Pista) {
-		if (x >= 640) {pos.canMove = true;}
+		if (x >= 640) {
+      pos.canMove = true;
+      canMovePlayer = false;
+    }
 		else {pos.canMove = false;}
 	}
 
@@ -44,6 +49,7 @@ class Player extends FlxSprite
 		increaseVelocity();
 		super.update(elapsed);
 		trace(SPEED); // Debug purposes
+    trace(canMovePlayer);
 	}
 
 }

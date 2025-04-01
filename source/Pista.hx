@@ -19,8 +19,11 @@ class Pista extends FlxSprite{
 		playState = new PlayState();
 	}
 
-	function sendMovePlayer() {
-		if (x < -18909) canMove = false;
+	public function sendMovePlayer(playerPosition:Player) {
+		if (x < -18709) {
+      canMove = false;
+      playerPosition.canMovePlayer = true;
+    }
 		trace(x);
 		trace(canMove);
 	}
@@ -51,7 +54,6 @@ class Pista extends FlxSprite{
 
 	override function update(elapsed:Float) {
 		super.update(elapsed);
-		sendMovePlayer();
 		updateMovement();
 		calculateSpeed();
 	}

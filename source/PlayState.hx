@@ -12,7 +12,8 @@ class PlayState extends FlxState
 	override public function create()
 	{
 		super.create();
-
+    
+    // TODO: make the background smaller
 		background = new Background();
 		pista = new Pista();
 		player = new Player(10,460);
@@ -28,5 +29,6 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		player.sendCanMove(pista);
+    pista.sendMovePlayer(player);
 	}
 }
