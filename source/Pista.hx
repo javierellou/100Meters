@@ -7,7 +7,7 @@ import flixel.FlxG;
 class Pista extends FlxSprite{
 	var playState:PlayState;
 	var SPEED:Float = 0;
-	@:allow(Player)
+	@:allow(Player) 
 	var canMove:Bool = false;
 	public static var ismovible:Bool = false;
 

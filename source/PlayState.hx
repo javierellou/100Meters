@@ -8,6 +8,7 @@ class PlayState extends FlxState
 	public var player:Player;
 	var background:Background;
 	var pista:Pista;
+  var sprintTime:SprintTime;
 
 	override public function create()
 	{
@@ -18,10 +19,13 @@ class PlayState extends FlxState
     pista = new Pista();
 		player = new Player(10,460);
 		pista = new Pista();
+    sprintTime = new SprintTime(20, 20);
+    sprintTime.startTimer();
 
 		add(background);
 		add(pista);
 		add(player);
+    add(sprintTime);
 	}
 
 
