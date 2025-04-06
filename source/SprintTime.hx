@@ -25,7 +25,7 @@ class SprintTime extends FlxText {
     {
       isActivated = true;
       start = Date.now();
-      timer = new Timer(1000);
+      timer = new Timer(1);
       timer.run = updateTimer;
     }
   }
@@ -39,8 +39,12 @@ class SprintTime extends FlxText {
   }
 
   function updateTimer() {
+    /*
     actualTime = Date.now().getTime();
     totalTime = timePassed + (actualTime - start.getTime());
+    text = Std.string(totalTime);
+    */
+    totalTime = haxe.Timer.stamp();
     text = Std.string(totalTime);
   }
 
