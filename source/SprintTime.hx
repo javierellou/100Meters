@@ -30,8 +30,8 @@ class SprintTime extends FlxText {
     }
   }
 
-  public function stopTimer() {
-    if (isActivated) {
+  public function stopTimer(playerX:Float) {
+    if (isActivated && playerX >= 1200) {
       isActivated = false;
       timer.stop();
       timePassed += Date.now().getTime() - start.getTime();
@@ -39,17 +39,11 @@ class SprintTime extends FlxText {
   }
 
   function updateTimer() {
-    /*
-    actualTime = Date.now().getTime();
-    totalTime = timePassed + (actualTime - start.getTime());
-    text = Std.string(totalTime);
-    */
     totalTime = haxe.Timer.stamp();
     text = Std.string(totalTime);
   }
 
   override function update(elapsed:Float) {
     super.update(elapsed);
-    trace(totalTime);
   }
 }

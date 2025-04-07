@@ -24,14 +24,14 @@ class Pista extends FlxSprite{
       canMove = false;
       playerPosition.canMovePlayer = true;
     }
-		trace(x);
-		trace(canMove);
+		// trace(x);
+		// trace(canMove);
 	}
 
 	function updateMovement() {
 		if (canMove)
 		{
-			trace("Condition: ", canMove);
+			// trace("Condition: ", canMove);
 			velocity.x = SPEED * -1;
 			if (x < 640) {velocity.x = SPEED * -1;}
 			else {velocity.x = 0;}

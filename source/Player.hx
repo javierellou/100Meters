@@ -48,8 +48,8 @@ class Player extends FlxSprite
 		updateMovement();
 		increaseVelocity();
 		super.update(elapsed);
-		trace(SPEED); // Debug purposes
-    trace(canMovePlayer);
+		// trace(SPEED); // Debug purposes
+    // trace(canMovePlayer);
 	}
 
 }
