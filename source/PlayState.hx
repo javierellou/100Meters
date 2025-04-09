@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.util.FlxColor;
 import Pista;
+import flixel.ui.FlxButton;
 
 class PlayState extends FlxState
 {
@@ -12,6 +13,7 @@ class PlayState extends FlxState
 	var pista:Pista;
   var sprintTime:SprintTime;
   var timerBackground:FlxSprite;
+  var startButton:FlxButton;
 
 	override public function create()
 	{
@@ -26,15 +28,22 @@ class PlayState extends FlxState
 		pista = new Pista();
 
     sprintTime = new SprintTime(20, 20);
-    sprintTime.startTimer();
 
+    startButton = new FlxButton(10, 80, "Start", startSprint);
+    
 		add(background);
 		add(pista);
 		add(player);
     add(timerBackground);
     add(sprintTime);
+    add(startButton);
 	}
 
+  // TODO: make that you can unly sprint if the button is pressed
+  function startSprint() {
+      startButton.kill();
+      sprintTime.startTimer();
+  }
 
 	override public function update(elapsed:Float)
 	{

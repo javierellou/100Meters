@@ -91,6 +91,7 @@ import sys.FileSystem;
 #if !display
 #if flash
 
+@:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_onyourmaksgetset_wav extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_sounds_sounds_go_here_txt extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_data_data_goes_here_txt extends null { }
 @:keep @:bind @:noCompletion #if display private #end class __ASSET__assets_music_music_goes_here_txt extends null { }

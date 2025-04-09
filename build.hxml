@@ -1,5 +1,6 @@
 -lib flixel
 -lib openfl
+-lib random
 
 -cp source
 -main ApplicationMain 
