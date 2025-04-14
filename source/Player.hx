@@ -8,7 +8,8 @@ class Player extends FlxSprite
 {
 	public var SPEED:Float = 0;
 	@:allow(Pista)
-	var canMovePlayer:Bool = true;
+  @:allow(PlayState)
+	var canMovePlayer:Bool = false;
 	
 	public function new(x:Float = 0, y:Float = 0) {
 		super(x, y);
